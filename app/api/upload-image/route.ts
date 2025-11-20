@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     const fileName = `image-${uniqueId}.${fileExtension}`;
     
     // Create the file path
-    const filePath = path.join(process.cwd(), 'public', 'uploads');
+    const filePath = path.join(process.cwd(), 'user-data', 'uploads');
     
     // Create the uploads directory if it doesn't exist
     if (!fs.existsSync(filePath)) {
@@ -41,7 +41,7 @@ export async function POST(request: Request) {
     // Return the path to the uploaded image
     return NextResponse.json({ 
       success: true, 
-      imagePath: `/uploads/${fileName}` 
+      imagePath: `/api/uploads/${fileName}`
     });
   } catch (error) {
     console.error('Error uploading image:', error);
