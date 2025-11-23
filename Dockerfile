@@ -34,7 +34,7 @@ COPY --from=builder /app/next.config.ts ./
 RUN npm ci --omit=dev
 
 # Create directory for uploaded files and ensure proper permissions
-RUN mkdir -p /app/public/uploads && chmod 755 /app/public/uploads
+RUN mkdir -p /app/uploads && chmod 755 /app/uploads
 
 # Expose the port the app will run on
 EXPOSE 3000

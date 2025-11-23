@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    volumes:
-      - ./public/uploads:/app/public/uploads
     environment:
-      - NODE_ENV=production
+      - UPLOAD_DIR=/app/uploads
+    volumes:
+      - ./uploads:/app/uploads
